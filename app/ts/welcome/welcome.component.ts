@@ -21,7 +21,7 @@ export class WelcomeComponent{
 
   private name: string;
   private visible: boolean;
-  private person: string;
+  public person: string;
   public speak: void;
   private defaultName: string;
 }
