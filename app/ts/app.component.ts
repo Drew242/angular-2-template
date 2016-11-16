@@ -1,8 +1,10 @@
-import {Component} from 'angular2/core';
+import { Component } from 'angular2/core';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @Component({
-    selector: 'my-app',
-    template: '<h1>Angular 2 Template</h1>'
+    selector: 'app',
+    templateUrl: 'app/ts/app.component.html',
+    providers: [ WelcomeComponent ]
 })
 
 export class AppComponent {}
