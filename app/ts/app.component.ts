@@ -4,7 +4,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 @Component({
     selector: 'app',
     templateUrl: 'app/ts/app.component.html',
-    providers: [ WelcomeComponent ]
+    styleUrls: [ 'app/ts/app.component.scss' ],
+    directives: [ WelcomeComponent ]
 })
 
 export class AppComponent {}

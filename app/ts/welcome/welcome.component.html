@@ -1,3 +1,7 @@
-<div>
-  <h2>Welcome {{name}}</h2>
+<div [hidden]="!visible">
+  <h2>What's your name? <input [(ngModel)]="name" type="text"/></h2>
+  <button class="btn btn-info" (click)="speak()">Log My Name</button>
+</div>
+<div class="welcome-box" *ngIf="person">
+  <h2>Welcome {{ person }}</h2>
 </div>
