@@ -1,8 +1,8 @@
 <div class="to-do-box col-lg-6 col-lg-offset-3">
   <h2 id="to-do-banner">To Do</h2>
-  <h4><input type="text"/></h4>
+  <h4><input type="text" placeholder="What needs to be done?" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()"/></h4>
   <div class="todos">
-    <table class="table table-hover">
+    <table *ngIf="todos.length > 0" class="table table-hover">
       <thead>
         <tr>
           <th>Complete</th>
@@ -11,8 +11,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
+        <tr *ngFor="#todo of todos">
+          <td><input class="toggle" type="radio" (click)="toggleTodoComplete(todo)" [checked]="todo.complete"></td>
+          <td>{{ todo.title }}</td>
+          <td><button class="destroy" (click)="removeTodo(todo)"></button></td>
         </tr>
       </tbody>
     </table>
